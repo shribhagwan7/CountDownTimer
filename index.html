@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CountDownTimer</title>
+    <link rel="stylesheet" href="./style.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./style.css"> -->
+</head>
+<body>
+
+    <header>
+        <div class="left">
+            <p>Timer CountDown</p>
+            <img class="svg" src="./images/t.svg" alt="">
+        </div>
+        <div class="mid">
+            <a href="#" id="olympic"><p>Olympic</p></a>
+            <a href="#" id="ipl"><p>IPL</p></a>
+            <a href="#" id="fifa"><p>FIFA</p></a>
+            <a href="#" id="college"><p>College Leave</p></a>
+            <a href="#" id="placement"><p>Placement</p></a>
+        </div>
+        <div class="right">
+            <p>Explore Web</p>
+            <img class="svg" src="./images/arrow.svg" alt="">
+        </div>
+    </header>
+
+    <main>
+        <div class="content">
+            <h1>My first CountDownTimer</h1>
+            <span>CountDownTimer Design</span>
+            <p class="par">Hello Everyone, I’m Shri Bhagwan currently a BCA 2<sup> nd </sup>year student at <br> Shobhit University Meerut.
+            <br> I've design a CountDownTimer using HTML, CSS and JavaScript.
+            </p>
+            <button class="cn"><a href="#">Explore</a></button>
+        </div>
+        
+        <div class="timerClock">
+            <div class="clock">
+                <div class="number" style="--n:1"><b>1</b></div>
+                <div class="number" style="--n:2"><b>2</b></div>
+                <div class="number" style="--n:3"><b>3</b></div>
+                <div class="number" style="--n:4"><b>4</b></div>
+                <div class="number" style="--n:5"><b>5</b></div>
+                <div class="number" style="--n:6"><b>6</b></div>
+                <div class="number" style="--n:7"><b>7</b></div>
+                <div class="number" style="--n:8"><b>8</b></div>
+                <div class="number" style="--n:9"><b>9</b></div>
+                <div class="number" style="--n:10"><b>10</b></div>
+                <div class="number" style="--n:11"><b>11</b></div>
+                <div class="number" style="--n:12"><b>12</b></div>
+                <div class="hour-hand" id="hour-hand"></div>
+                <div class="minute-hand" id="minute-hand"></div>
+                <div class="second-hand" id="second-hand"></div>
+                <div class="center-dot"></div>
+            </div>
+        </div>
+
+        <div id="header-content-area">
+            <div id="olympic-content" class="hidden"> <div class="olympic-head">Olympic 2028</div> International sports event held every 4 years with summer and winter games. <br>Promotes unity, sportsmanship, and features global athletes.
+                <div id="olympic-time-box" class="time-box"></div>
+            </div>
+
+            <div id="ipl-content" class="hidden"> <div class="ipl-head">IPL 2025</div> Indian cricket league with city-based teams and global players. <br>Known for high-energy matches and entertainment value.
+                <div id="ipl-time-box" class="time-box"></div>
+            </div>
+
+            <div id="fifa-content" class="hidden"> <div class="fifa-head">FIFA 2026</div> Governs global football and organizes the FIFA World Cup. <br>Promotes soccer development worldwide.
+                <div id="fifa-time-box" class="time-box"></div>
+            </div>
+
+            <div id="college-leave-content" class="hidden"> <div class="college-head">College Leave 2026</div> Academic breaks for rest, activities, or internships. <br>Helps balance academics and personal growth.
+                <div id="college-time-box" class="time-box"></div>
+            </div>
+
+            <div id="placement-content" class="hidden"> <div class="placement-head">College Leave 2026</div> Campus recruitment process for jobs. <br>Prepares students for professional careers.
+                <div id="placement-time-box" class="time-box"></div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="foot">
+            <p>Developed by Shri Bhagwan Kumar</p>
+            <p>All Rights Reserved by SBBS.</p>
+            <div class="anchor">
+                <a href="https://github.com/shribhagwan7" target="_blank"><img src="./images/git.svg" alt=""></a>
+                <a href="www.linkedin.com/in/shri-bhagwan-kumar" target="_blank"><img src="./images/linkedin.svg" alt=""></a>
+                <a href="https://www.instagram.com/sbbs_kushwaha" target="_blank"><img src="./images/insta.svg" alt=""></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./script.js"></script>
+</body>
+</html>
