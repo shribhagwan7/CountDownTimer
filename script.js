@@ -100,119 +100,48 @@ function showOnlyContent(contentId) {
     re.style.width = '100%';
 }
 
-// Olympic countDown timer
 
-const OlympicTimer = document.getElementById('olympic-time-box');
+// CountDownTimer function for all
 
-function OlympicTiming(){
-    const date1 = new Date();
-    const date2 = new Date("2028-07-14");
-    const date = date2 - date1;
-    const days = Math.floor(date/(1000*60*60*24));
-    const hour = Math.floor((date/(1000*60*60))%24);
-    const minute = Math.floor((date/(1000*60))%60);
-    const second = Math.floor((date/(1000))%60);
+function initializeCountdownTimer(elementId, targetDate) {
+    const timerElement = document.getElementById(elementId);
 
-    // timer.innerHTML = (`${days} Days: ${hour} hour: ${minute} minute: ${second} second`);
+    function updateTimer() {
+        const now = new Date();
+        const target = new Date(targetDate);
+        const timeRemaining = target - now;
 
-    OlympicTimer.innerHTML =
-        `<span class="big">${days}</span> <span class="small">Days</span><span class="dd">:</span>
-        <span class="big">${hour}</span> <span class="small">Hours</span><span class="dd">:</span>
-        <span class="big">${minute}</span> <span class="small">Minutes</span><span class="dd">:</span>
-        <span class="big">${second}</span> <span class="small">Seconds</span>
-    `;
+        if (timeRemaining <= 0) {
+            timerElement.innerHTML =
+                `<span class="big">0</span> <span class="small">Days</span>
+                <span class="big">0</span> <span class="small">Hours</span>
+                <span class="big">0</span> <span class="small">Minutes</span>
+                <span class="big">0</span> <span class="small">Seconds</span>`;
+            return; // Stop updating if the target date has passed
+        }
+
+        const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeRemaining / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((timeRemaining / (1000 * 60)) % 60);
+        const seconds = Math.floor((timeRemaining / 1000) % 60);
+
+        timerElement.innerHTML =
+            `<span class="big">${days}</span> <span class="small">Days</span><span class="dd">:</span>
+             <span class="big">${hours}</span> <span class="small">Hours</span><span class="dd">:</span>
+             <span class="big">${minutes}</span> <span class="small">Minutes</span><span class="dd">:</span>
+             <span class="big">${seconds}</span> <span class="small">Seconds</span>`;
+    }
+
+    // Update the timer every second
+    setInterval(updateTimer, 1000);
+    updateTimer(); // Initial call to display immediately
 }
 
-setInterval(OlympicTiming, 1000);
+// Initialize all countdown timers
 
-// ipl countDown timer
+initializeCountdownTimer('olympic-time-box', '2028-07-14');
+initializeCountdownTimer('ipl-time-box', '2025-03-14');
+initializeCountdownTimer('fifa-time-box', '2026-06-11');
+initializeCountdownTimer('college-time-box', '2026-06-01');
+initializeCountdownTimer('placement-time-box', '2026-07-01');
 
-const IplTimer = document.getElementById('ipl-time-box');
-
-function IplTiming(){
-    const date1 = new Date();
-    const date2 = new Date("2025-03-14");
-    const date = date2 - date1;
-    const days = Math.floor(date/(1000*60*60*24));
-    const hour = Math.floor((date/(1000*60*60))%24);
-    const minute = Math.floor((date/(1000*60))%60);
-    const second = Math.floor((date/(1000))%60);
-    
-    IplTimer.innerHTML =
-        `<span class="big">${days}</span> <span class="small">Days</span><span class="dd">:</span>
-        <span class="big">${hour}</span> <span class="small">Hours</span><span class="dd">:</span>
-        <span class="big">${minute}</span> <span class="small">Minutes</span><span class="dd">:</span>
-        <span class="big">${second}</span> <span class="small">Seconds</span>
-    `;
-}
-
-setInterval(IplTiming, 1000);
-
-// fifa countDown timer
-
-const FifaTimer = document.getElementById('fifa-time-box');
-
-function FifaTiming(){
-    const date1 = new Date();
-    const date2 = new Date("2026-06-11");
-    const date = date2 - date1;
-    const days = Math.floor(date/(1000*60*60*24));
-    const hour = Math.floor((date/(1000*60*60))%24);
-    const minute = Math.floor((date/(1000*60))%60);
-    const second = Math.floor((date/(1000))%60);
-    
-    FifaTimer.innerHTML =
-        `<span class="big">${days}</span> <span class="small">Days</span><span class="dd">:</span>
-        <span class="big">${hour}</span> <span class="small">Hours</span><span class="dd">:</span>
-        <span class="big">${minute}</span> <span class="small">Minutes</span><span class="dd">:</span>
-        <span class="big">${second}</span> <span class="small">Seconds</span>
-    `;
-}
-
-setInterval(FifaTiming, 1000);
-
-// college leave countDown timer
-
-const CollegeTimer = document.getElementById('college-time-box');
-
-function CollegeTiming(){
-    const date1 = new Date();
-    const date2 = new Date("2026-06-01");
-    const date = date2 - date1;
-    const days = Math.floor(date/(1000*60*60*24));
-    const hour = Math.floor((date/(1000*60*60))%24);
-    const minute = Math.floor((date/(1000*60))%60);
-    const second = Math.floor((date/(1000))%60);
-    
-    CollegeTimer.innerHTML =
-        `<span class="big">${days}</span> <span class="small">Days</span><span class="dd">:</span>
-        <span class="big">${hour}</span> <span class="small">Hours</span><span class="dd">:</span>
-        <span class="big">${minute}</span> <span class="small">Minutes</span><span class="dd">:</span>
-        <span class="big">${second}</span> <span class="small">Seconds</span>
-    `;
-}
-
-setInterval(CollegeTiming, 1000);
-
-// placement countDown timer
-
-const PlacementTimer = document.getElementById('placement-time-box');
-
-function PlacementTiming(){
-    const date1 = new Date();
-    const date2 = new Date("2026-07-01");
-    const date = date2 - date1;
-    const days = Math.floor(date/(1000*60*60*24));
-    const hour = Math.floor((date/(1000*60*60))%24);
-    const minute = Math.floor((date/(1000*60))%60);
-    const second = Math.floor((date/(1000))%60);
-    
-    PlacementTimer.innerHTML =
-        `<span class="big">${days}</span> <span class="small">Days</span><span class="dd">:</span>
-        <span class="big">${hour}</span> <span class="small">Hours</span><span class="dd">:</span>
-        <span class="big">${minute}</span> <span class="small">Minutes</span><span class="dd">:</span>
-        <span class="big">${second}</span> <span class="small">Seconds</span>
-    `;
-}
-
-setInterval(PlacementTiming, 1000);
